@@ -12,8 +12,13 @@ class HomeController extends Controller
 //    }
     public function index()
     {
-        return view('index', [
-            'user' => 'userName'
+//        return view('home', [
+//            'user' => 'userName',
+//            'categoryList' => $this->getCategory()
+//        ]);
+        return view('layouts.admin', [
+            'user' => 'userName',
+            'categoryList' => $this->getCategory()
         ]);
     }
 }

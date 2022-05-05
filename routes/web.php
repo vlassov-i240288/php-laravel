@@ -41,14 +41,13 @@ use App\Http\Controllers\CategoryController;
 //});
 
 //Route::get('/', [HomeController::class, 'index']);
+
 Route::get('/admin', [IndexController::class, 'index']);
 Route::get('/user', [AutorizationController::class, 'index']);
 //
 //Route::get('/cat', [CategoryController::class, 'getCategory']);
 
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/news/category{id}', [NewsController::class, 'category'])->where('id', '\d+')->name('news.category');
 Route::get('/news/category{idCategory}/news{id}', [NewsController::class, 'show'])->where(['idCategory' => '\d+', 'id' => '\d+'])->name('news.show');

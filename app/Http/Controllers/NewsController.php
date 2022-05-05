@@ -113,6 +113,7 @@ class NewsController extends Controller {
     {
         return view('news.index', [
             'categoryList' => $this->getCategory()
+
         ]);
     }
 

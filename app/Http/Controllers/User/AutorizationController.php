@@ -9,10 +9,6 @@ class AutorizationController extends Controller
 {
     public function index()
     {
-        return <<<php
-        <h1>Форма заполнения авторизации для пользователя</h1>
-        <p>Какой-то текст</p>
-        <a href="/">Переход на главную</a>
-php;
+        return view('user.index');
     }
 }
