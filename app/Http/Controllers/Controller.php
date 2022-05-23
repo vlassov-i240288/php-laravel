@@ -69,6 +69,7 @@ class Controller extends BaseController
         for ($i=1; $i <= 10; $i++) {
             $data[] = [
                 'id' => $i,
+                'image' => $faker->imageUrl(200, 100),
                 'title' => 'Категория новостей '.$i
             ];
         }

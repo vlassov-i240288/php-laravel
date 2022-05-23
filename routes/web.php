@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\User\AutorizationController;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\FormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,40 +17,19 @@ use App\Http\Controllers\CategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-//hw-1
-//Route::get('/hello/{name}', function (string $name) {
-//   return <<<php
-//        <h1> Hello $name </h1>
-//   php;
-//});
-//
-//Route::get('/info/', function () {
-//    return <<<php
-//        <h1>Info Projects</h1>
-//    php;
-//});
-//
-//Route::get('/news/', function () {
-//    return <<<php
-//        <h1>Info News</h1>
-//    php;
+//Route::get('/', function (){
+//   return 'Тут некий текст, который будем тестировать';
 //});
 
-//Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/admin', [IndexController::class, 'index']);
 Route::get('/user', [AutorizationController::class, 'index']);
-//
-//Route::get('/cat', [CategoryController::class, 'getCategory']);
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/news/category{id}', [NewsController::class, 'category'])->where('id', '\d+')->name('news.category');
 Route::get('/news/category{idCategory}/news{id}', [NewsController::class, 'show'])->where(['idCategory' => '\d+', 'id' => '\d+'])->name('news.show');
+Route::match(['post', 'get'], '/formA', [FormController::class, 'formA'])->name('formA');
+Route::match(['post', 'get'], '/formB', [FormController::class, 'formB'])->name('formB');
 
 
 //Route::get('/category', [\App\Http\Controllers\CategoryController::class, 'getCategory']);

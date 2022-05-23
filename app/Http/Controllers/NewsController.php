@@ -119,14 +119,14 @@ class NewsController extends Controller {
 
     public function category(int $idCategory)
     {
-        return view('news.category', [
+        return view('news', [
             'newsList' => $this->getCategory($idCategory)
         ]);
     }
 
     public function show(int $idCategory, int $id)
     {
-        return view('news.show', [
+        return view('show', [
             'newsItem' => $this->getNews($idCategory, $id)
         ]);
     }
