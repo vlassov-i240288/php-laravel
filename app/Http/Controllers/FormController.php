@@ -11,7 +11,6 @@ class FormController extends Controller
         if ($request->has('e-mail')) {
             $date = date_create();
             $file_name = "form_a/" . date_format($date, 'YmdHis.u') . ".txt";
-//            $file_name = date_format($date, 'YmdHis.u') . ".txt".public_path('farm_a');
             $f = fopen($file_name, "w");
             fwrite($f, $request->get('e-mail') . "\n");
             fwrite($f, $request->get('comments'));

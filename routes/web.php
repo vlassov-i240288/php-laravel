@@ -7,6 +7,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\User\AutorizationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\AddNewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,12 +25,22 @@ use App\Http\Controllers\FormController;
 
 Route::get('/admin', [IndexController::class, 'index']);
 Route::get('/user', [AutorizationController::class, 'index']);
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/news', [NewsController::class, 'index'])->name('news');
-Route::get('/news/category{id}', [NewsController::class, 'category'])->where('id', '\d+')->name('news.category');
-Route::get('/news/category{idCategory}/news{id}', [NewsController::class, 'show'])->where(['idCategory' => '\d+', 'id' => '\d+'])->name('news.show');
-Route::match(['post', 'get'], '/formA', [FormController::class, 'formA'])->name('formA');
-Route::match(['post', 'get'], '/formB', [FormController::class, 'formB'])->name('formB');
+
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
+//Route::get('/news', [NewsController::class, 'index'])->name('news');
+Route::get('/news/category{id}', [NewsController::class, 'newsList'])
+    ->where('id', '\d+')
+    ->name('news.category');
+Route::get('/news/category{idCategory}/news{id}', [NewsController::class, 'show'])
+    ->where(['idCategory' => '\d+', 'id' => '\d+'])
+    ->name('news.show');
+Route::match(['post', 'get'], '/formA', [FormController::class, 'formA'])
+    ->name('formA');
+Route::match(['post', 'get'], '/formB', [FormController::class, 'formB'])
+    ->name('formB');
+Route::match(['post', 'get'], '/addNews', [AddNewsController::class, 'addNews'])
+    ->name('addNews');
 
 
 //Route::get('/category', [\App\Http\Controllers\CategoryController::class, 'getCategory']);

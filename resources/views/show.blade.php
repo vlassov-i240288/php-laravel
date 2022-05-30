@@ -9,6 +9,7 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <div class="col" style="width: 900px">
                             <div class="card shadow-sm">
+                                @dump($newsItem)
                                 <img src="{{$newsItem['image']}}" alt="">
                                 <div class="card-body">
                                     <h2 class="card-text">{{$newsItem['title']}}</h2>

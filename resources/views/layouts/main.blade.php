@@ -42,6 +42,7 @@
                         <p style="color: white">Форма для клиентов:</p>
                         <a href="/formA">Обратная связь</a><br>
                         <a href="/formB">Для заказчика</a>
+                        <a href="/addNews">Добавить новость</a>
                     </div>
                 </div>
             </div>

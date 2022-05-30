@@ -1,4 +1,38 @@
-<h1>Форма заполнения авторизации для администратора</h1>
-<p>{{$text}}</p>
-<p>{{$text2}}</p>
-<a href="/">Переход на главную</a>
+@extends('layouts.main')
+<body>
+@section('main')
+    <div class="container">
+        <h1>Админ панель</h1>
+    </div>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Заголовок</th>
+                        <th scope="col">Текст</th>
+                        <th scope="col">Управление</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($news as $item)
+                        <tr>
+                            <th scope="row">{{$item->id}}</th>
+                            <td>{{$item->title}}</td>
+                            <td>{{$item->inform}}</td>
+                            <td>
+                                <a href="">Удалить </a>
+                                <a href="/addNews"> Добавить</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+@endsection
+</body>
+</html>
