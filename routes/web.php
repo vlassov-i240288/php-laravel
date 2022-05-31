@@ -23,7 +23,7 @@ use App\Http\Controllers\AddNewsController;
 //});
 
 
-Route::get('/admin', [IndexController::class, 'index']);
+Route::get('/admin', [IndexController::class, 'index'])->name('admin.index');
 Route::get('/user', [AutorizationController::class, 'index']);
 
 Route::get('/', [HomeController::class, 'index'])
@@ -39,8 +39,14 @@ Route::match(['post', 'get'], '/formA', [FormController::class, 'formA'])
     ->name('formA');
 Route::match(['post', 'get'], '/formB', [FormController::class, 'formB'])
     ->name('formB');
-Route::match(['post', 'get'], '/addNews', [AddNewsController::class, 'addNews'])
+Route::match(['post'], '/add', [AddNewsController::class, 'add'])
+    ->name('add');
+Route::match(['get'], '/addNews', [AddNewsController::class, 'addNews'])
     ->name('addNews');
+
+Route::get('/delNews/{id}', [AddNewsController::class, 'delNews'])
+    ->name('delNews');
+
 
 
 //Route::get('/category', [\App\Http\Controllers\CategoryController::class, 'getCategory']);

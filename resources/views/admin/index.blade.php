@@ -23,7 +23,7 @@
                             <td>{{$item->title}}</td>
                             <td>{{$item->inform}}</td>
                             <td>
-                                <a href="">Удалить </a>
+                                <a href="{{route('delNews', $item->id)}}">Удалить </a>
                                 <a href="/addNews"> Добавить</a>
                             </td>
                         </tr>
