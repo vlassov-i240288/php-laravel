@@ -17,6 +17,9 @@
                     </tr>
                     </thead>
                     <tbody>
+{{--                    @if(session()->has('success'))--}}
+{{--                        <x-alert typy="success" :message="session()->get('success')"></x-alert>--}}
+{{--                    @endif--}}
                     @foreach($news as $item)
                         <tr>
                             <th scope="row">{{$item->id}}</th>

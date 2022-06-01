@@ -18,9 +18,7 @@ use App\Http\Controllers\AddNewsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::get('/', function (){
-//   return 'Тут некий текст, который будем тестировать';
-//});
+
 
 
 Route::get('/admin', [IndexController::class, 'index'])->name('admin.index');
@@ -28,7 +26,6 @@ Route::get('/user', [AutorizationController::class, 'index']);
 
 Route::get('/', [HomeController::class, 'index'])
     ->name('home');
-//Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/news/category{id}', [NewsController::class, 'newsList'])
     ->where('id', '\d+')
     ->name('news.category');
@@ -46,14 +43,3 @@ Route::match(['get'], '/addNews', [AddNewsController::class, 'addNews'])
 
 Route::get('/delNews/{id}', [AddNewsController::class, 'delNews'])
     ->name('delNews');
-
-
-
-//Route::get('/category', [\App\Http\Controllers\CategoryController::class, 'getCategory']);
-// будет использоваться последний роут
-//Route::get('/test', [IndexController::class, 'test1']);
-//Route::get('/test', [IndexController::class, 'test2']);
-//Route::get('/news', [NewsController::class, 'news'])
-//    -> name('news');
-//Route::get('/news/{id}', [NewsController::class, 'newsOne'])
-//    -> name('newsOne');

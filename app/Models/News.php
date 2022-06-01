@@ -10,4 +10,17 @@ class News extends Model
     use HasFactory;
     protected $fillable = ['title', 'inform', 'category_id'];
 //    public $timestamps = false;
+
+    public static function rules()
+    {
+//       $tableNameCategory = (new Categories())->getTable();
+       return [
+           'title' => 'required|max:255',
+           'inform' => 'required',
+//           'category_id' => "required|exists:{$tableNameCategory}, id",
+       ];
+    }
+
 }
+
+

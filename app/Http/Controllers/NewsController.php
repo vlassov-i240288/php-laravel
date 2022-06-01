@@ -13,11 +13,4 @@ class NewsController extends Controller {
     {
         return view('news', ['news'=>News::all()]);
     }
-
-//    public function show(News $image)
-//    {
-//        return view('show', [
-//            'newsItem' => $image
-//        ]);
-//    }
 }

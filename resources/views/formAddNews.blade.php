@@ -6,11 +6,20 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <form action="{{route('add')}}" method="POST">
                             @csrf
+
+                            @if($errors->count())
+                                <div class="alert alert-danger">
+                                    @foreach($errors->all() as $error)
+                                        <p style="margin-bottom: 0;">{{ $error }}</p>
+                                    @endforeach
+                                </div>
+                            @endif
+
                             <h2>Добавить новость</h2>
                             <div class="form-floating mb-3">
-                                <select name="category_id" id="floatingInput1">
+                                <select class="form-select" name="category_id" id="floatingInput1">
                                     @foreach($categories as $item)
-                                    <option value="{{$item->id}}">{{$item->title}}</option>
+                                        <option value="{{$item->id}}">{{$item->title}}</option>
                                     @endforeach
                                 </select>
                                 <label for="floatingInput1">Категория</label>
