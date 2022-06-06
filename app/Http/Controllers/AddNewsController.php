@@ -13,14 +13,11 @@ class AddNewsController extends Controller
 {
     public function addNews()
     {
-
         return view('formAddNews', ['categories'=>Categories::all()]);
     }
 
     public function add(Request $request)
     {
-
-
 
         $validated = $request->only(['title', 'inform', 'category_id']);
         $news = new News($validated);
@@ -47,5 +44,4 @@ class AddNewsController extends Controller
         News::where('id', $id)->delete();
         return redirect()->route('admin.index');
     }
-
 }

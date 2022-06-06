@@ -24,6 +24,10 @@
                     font-size: 3.5rem;
                 }
             }
+            ul li a {
+                text-decoration: none;
+                color: whitesmoke;
+            }
         </style>
     @show
 </head>
@@ -33,17 +37,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 offset-md-1 py-4">
-                    <div>
-                        <p style="color: white">Авторизация:</p>
-                        <a href="/admin">для администратора</a><br>
-                        <a href="/user">для пользователя</a>
-                    </div>
-                    <div>
-                        <p style="color: white">Форма для клиентов:</p>
-                        <a href="/formA">Обратная связь</a><br>
-                        <a href="/formB">Для заказчика</a>
-                        <a href="/addNews">Добавить новость</a>
-                    </div>
+                    <ul style="color: white;  list-style-type: none; font-size: 20px">Авторизация:
+                        <li><a href="/admin">для администратора</a></li>
+                        <li><a href="/user">для пользователя</a></li>
+                    </ul>
+                    <ul style="color: white;  list-style-type: none;">Форма для клиентов:
+                        <li><a href="/formA">Обратная связь</a><br></li>
+                        <li><a href="/formB">Для заказчика</a></li>
+                        <li> <a href="/addNews">Добавить новость</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
