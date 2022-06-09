@@ -163,6 +163,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Orchestra\Parser\XmlServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
 
@@ -195,6 +196,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'XmlParser'=> Orchestra\Parser\Xml\Facade::class,
     ])->toArray(),
 
 ];

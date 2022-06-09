@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\AddNewsController;
 use App\Http\Controllers\AddAdminController;
+use App\Http\Controllers\Admin\ParserController;
 
 
 use App\Http\Controllers\Account\IndexController as AccountControler;
@@ -57,7 +58,12 @@ Route::group(['middleware'=>'auth'], function () {
 
     Route::get('/addAdmin/{is_admin}', [AddAdminController::class, 'addAdmin'])
         ->name('addAdmin');
+
+    Route::get('/parser', [ParserController::class, 'index'])
+        ->name('parser');
+
 });
+
 
 
 Auth::routes();

@@ -4,6 +4,8 @@
         <h2>Добро пожаловать {{ Auth::user()->name }}</h2>
         @if(Auth::user()->is_admin)
             <a href="{{ route('admin.index') }}">в админку</a>
+
+            <a href="{{ route('parser') }}">Парсер</a>
         @endif
 
         @if(Auth::user()->is_admin == 0)
